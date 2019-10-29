@@ -32,6 +32,12 @@
 
           instructions.appendChild(el);}
     }
+        function mypick(bus) { 
+        return bus.route_id === '127';
+        }
+        .then(title => {res.find(mypick))
+        $(".header").html("UMD Bus Route" + mypick(bus));}
+        
   }
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
