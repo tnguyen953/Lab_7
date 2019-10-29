@@ -19,22 +19,25 @@
     function loadData() {
       fetch('https://api.umd.io/v0/bus/routes')
         .then(res => res.json())
-        .then(res => {
+        .then(res => { 
+        res.map(c => c.name + " " + c.code))
         console.log(res);}
-        .then(res => {
-        sessionStorage.setItem('bus_arr', JSON.stringify(res));
-        const json = sessionStorage.getItem('bus_arr');
-        }
-        .then(res => {
-        const list = JSON.parse(json);
-        const nameArray = list.map((i) => i.name);
-        .then(nameid => {
-        const list = 
-        })
-          return res;
-        })
-        .then(data => document.querySelector(".content").innerText = data);
+        return res;
+
+        .then(data => {document.querySelector(".content").innerText = data);
+        for (let i = 0; i < 50; i++) {
+          const selectNumber = getRandomIntInclusive(0, 242);
+          let el = document.createElement("li");
+          el.innerText = data[selectNumber];
+
+          instructions.appendChild(el);}
     }
+  }
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+  }
   </script>
 </body>
 
