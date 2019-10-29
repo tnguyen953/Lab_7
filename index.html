@@ -20,7 +20,7 @@
       fetch('https://api.umd.io/v0/bus/routes')
         .then(res => res.json())
         .then(res => { 
-        res.map(c => c.name + " " + c.code))
+        res.map(c => c.name + " " + c.code));
         console.log(res);}
         return res;
 
@@ -33,9 +33,9 @@
           instructions.appendChild(el);}
     }
         function mypick(bus) { 
-        return bus.route_id === '127';
+        return bus.title === '127 Mazza GrandMarc';
         }
-        .then(title => {res.find(mypick))
+        .then(new_title => {res.find(mypick))
         $(".header").html("UMD Bus Route" + mypick(bus));}
         
   }
