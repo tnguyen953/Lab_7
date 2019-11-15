@@ -20,7 +20,7 @@
       fetch('https://api.umd.io/v0/bus/routes')
         .then(res => res.json())
         .then(res => { 
-        res.map(c => c.name + " " + c.code));
+        res.map(c => c.route_id + " " + c.title));
         console.log(res);}
         return res;
 
